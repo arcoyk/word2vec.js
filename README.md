@@ -1,4 +1,3 @@
-# mini_word2vec
 Light weight frontend Word2Vec with sample trained model of 3600 Japanese words using TensorFlow.js for cosine similarity calculation. 3600 words were randomly selected from original Word2Vec model (330000 words, 50 dimentional vectors, trained with Wikipedia articles).
 
 - Word count: 3600
@@ -32,16 +31,16 @@ word2vec.w2v("補修")
 ```
 
 # Why
-[ml5.js](https://ml5js.org/reference/api-Word2vec/) provides more stable word2vec on js with full features. mini_word2vec was made for ready-to-use repo with a hostable-size model for my personal convenience. 
+[ml5.js](https://ml5js.org/reference/api-Word2vec/) provides more stable word2vec on js with full features. word2vec.js was made for ready-to-use repo with a hostable-size model for my personal convenience. 
 
-mini_word2vec also differs in two points.
+word2vec.js also differs in two points.
 
-1. mini_word2vec accepts separated model which is GPU oriented: easy to create tensor matrix with TensorFlow.js, easy to set attribute on WebGL shader (in case you want to visualize it).
+1. word2vec.js accepts separated model which is GPU oriented: easy to create tensor matrix with TensorFlow.js, easy to set attribute on WebGL shader (in case you want to visualize it).
 
 ```js
 // common word2vec model
 {"dog": [0.32, 0.43, 0.45], "cat": [0.12, 0.23, 0.54]}
-// mini_word2vec accepts separated model
+// word2vec.js accepts separated model
 {"ws": ["dog", "cat"], "vs": [[0.32, 0.43, 0.45], [0.12, 0.23, 0.54]]}
 ```
 
