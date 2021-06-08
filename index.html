@@ -4,6 +4,21 @@
     <script src="./js/data50.js"></script>
     <script src="./js/word2vec.js"></script>
     <body>
-        word2vec
+        <p>"おでん" =>  ["焼き鳥", "すき焼き", "たこ焼き", "焼きそば"]</p>
+        see console
     </body>
+    <script>
+        init_word2vec();
+        
+        console.log("Get vector from word");
+        let w = "おでん";
+        let v = word2vec.w2v(w);
+        console.log(v);
+        
+        console.log("Get similar words from word");
+        let rs = word2vec.w2ws(w);
+        console.log("similar words: ", rs.ws);
+        console.log("similarities: ", rs.ps);
+
+    </script>
 </html>

@@ -1,11 +1,17 @@
-Light weight frontend Word2Vec with sample trained model of 3600 Japanese words. 3600 words were randomly selected from original Word2Vec model (330000 words, 50 dimentional vectors, trained with Wikipedia articles).
+```
+clone git@github.com:arcoyk/word2vec.js.git
+// open index.html for demo
+```
 
-- Word count: 3600
+# word2vec.js
+Light weight frontend Word2Vec with sample trained model of 3171 Japanese words. 3171 words were randomly selected from original Word2Vec model (330,000 words, 50 dimentional vectors, trained with Wikipedia articles).
+
+- Word count: 3171
 - Vector dimention: 50
 - Language: Japanese
 - Original source: Wikipedia
 
-Pretrained model was translated into words and vectors which can be found at ./data/data50.js. This will be ready as soon as you open index.html. Edit this file to change the model.
+Pretrained model was translated into words and vectors which can be found at ./js/data50.js. This will be ready as soon as you open index.html. Edit this file to change the model.
 
 # Example
 ```js
