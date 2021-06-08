@@ -1,3 +1,8 @@
+
+https://user-images.githubusercontent.com/5988574/121248622-9c916000-c8de-11eb-96a0-6a9cfee806f0.mov
+
+
+
 ```
 clone git@github.com:arcoyk/word2vec.js.git
 // open index.html for demo
