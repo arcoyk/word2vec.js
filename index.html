@@ -1,38 +1,9 @@
 <html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.6.0/dist/tf.min.js"></script>
+    <script src="./js/data50.js"></script>
+    <script src="./js/word2vec.js"></script>
     <body>
         word2vec
     </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./data/data50.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.6.0/dist/tf.min.js"></script>
-    <script>
-        word2vec = {}
-        Data.wid = {}
-        Data.ws.map((e, i) => Data.wid[e] = i)
-        Data.tensor = {}
-        Data.tensor.vs = tf.tensor(Data.vs)
-        console.log(Data.ws.length)
-
-        word2vec.w2v = function(w) {
-            return Data.vs[Data.wid[w]]
-        }
-
-        word2vec.w2ws = function(w, topn=5) {
-            let v = word2vec.w2v(w)
-            v = tf.tensor(v)
-            v = v.reshape([v.shape[0], 1])
-            let p = tf.matMul(Data.tensor.vs, v)
-            p = p.flatten()
-            let ids = tf.topk(p, topn).indices
-            let ws = ids.arraySync().map(i => Data.ws[i])
-            let ps = ids.arraySync().map(i => p.arraySync()[i])
-            return {ws:ws, ps:ps}
-        }
-
-        // test
-        let w = _.sample(Data.ws)
-        let r = word2vec.w2ws(w)
-        console.log(w, r.ws, r.ps)
-
-    </script>
 </html>
